@@ -11,38 +11,35 @@
 
 /* index */
 
+@font-face {
+    font-family: myFirstFont;
+    src: url("../images/Stay Wildy.ttf");
+}
 #main-body{
-    background: linear-gradient(rgba(0,0,0,0.2),rgba(0, 0, 0, 0.2)), url(../images/romantic.jpg) no-repeat center center fixed;
+    background: url(../images/city-night3.jpg) no-repeat center center fixed;
     background-size: cover;
+    text-align: center;
 }
 
-.main-div{
-    height: 250px;
-    width: 470px;
-    margin-top: 100px;
-    margin-left: 25px;
-    background-color: #e9e5e525;
+#header {
+    color: white;
+    font-size: 200px;
+    margin-top: 20px;
+    font-family: myFirstFont;
 }
 
-.main-div p,
-.main-div h1,
-.main-div button{
-    position: relative;
-    left: 5%;
-    top:30px;
-    color:#f8f5f5;
+#date-night-button {
+    color: white;
+    margin-top: 20px;
 }
 
-.main-div h1{
-    font-size: 60px;
-}
 
 
 /* form */
 
 #form-body{
     /* background-image: url(../images/romantic.jpg);  */
-    background: url(../images/background.jpg) no-repeat center center fixed;
+    background: url(../images/holding-hands.png) no-repeat center center fixed;
     background-size: cover;
 }
 
@@ -63,7 +60,7 @@
 .options-list{
     background-color: #e9e5e58c;
     width: 74%;
-    margin-top: 100px;
+    margin-top: 20px;
     margin-left: 13%; 
     color:#5e5b5b;
 }
@@ -84,6 +81,11 @@ margin-bottom: 10px;
 .form-c button{
     margin-right:20px;
     margin-top: 20px;
+}
+
+.btn {
+    background-color: lightcoral;
+    color: black;
 }
 
 
