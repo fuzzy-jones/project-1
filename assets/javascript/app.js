@@ -7,12 +7,13 @@
 // Key: xzCLvXpkc5JmtDcX
 
 $(document).ready(function(){
+  $("#carousel-container").hide();
   // yelp ajax api call
   function yelp() {
     var settings = {
       "async": true,
       "crossDomain": true,
-      "url": "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=" + city + "&term=" + foodType + "&price=" + queryPrice + "&limit=5",
+      "url": "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=" + city + "," + state + "&term=" + foodType + "&price=" + queryPrice + "&limit=5",
       "method": "GET",
       "headers": {
         "Authorization": "Bearer wN3yn1ihiVGsnXVjsnGISEGW6rhZ7AJfqW2u8ObXlcjpbZrXAWYts0tT0aRiJklporL0o9-AUPNVf7NQa4lylBavnTyuR3fQYfuGXRdSM9TdQzVglhCcH1-Blgx5WnYx",
@@ -23,14 +24,22 @@ $(document).ready(function(){
     
     $.ajax(settings).done(function (response) {
       console.log(response);
+
+      // var yelpCarousel = $("<div class='item active'>");
+
       // added a loop to select specific targets within the object
       for(var i = 0; i < response.businesses.length; i++){
-      // name of restaurant stored in var restaurantName
+      
+      // var restaurantImage = response.businesses[i].image_url;
+      var restaurantImage1 = response.businesses[0].image_url;
+      var restaurantImage2 = response.businesses[1].image_url;
+      var restaurantImage3 = response.businesses[2].image_url;
+      var restaurantImage4 = response.businesses[3].image_url;
+      var restaurantImage5 = response.businesses[4].image_url;
+      console.log(response.businesses[i].image_url);
+
       var restaurantName = response.businesses[i].name;
       console.log(response.businesses[i].name);
-
-      var restaurantImage = response.businesses[i].image_url;
-      console.log(response.businesses[i].image_url);
 
       var restaurantRating = response.businesses[i].rating;
       console.log("Rating: " + response.businesses[i].rating);
@@ -38,13 +47,23 @@ $(document).ready(function(){
       var restaurantUrl = response.businesses[i].url;
       console.log(response.businesses[i].url);
       
-      // console log the price to make sure switch statement works
-      console.log(response.businesses[i].price);
+      $("#yelp-item-1").html("<img src=" + restaurantImage1 + ">"); 
+      $("#yelp-item-2").html("<img src=" + restaurantImage2 + ">");
+      $("#yelp-item-3").html("<img src=" + restaurantImage3 + ">");  
+      // $("#yelp-carousel").html("<div class='item active'><img src=" + restaurantImage + "></div>"); 
+   
       }
+
     });
+    
   }
   // only run the yelp api function when food and food&fun button is clicked, not fun only button
   $(document).on("click", "#dinner-btn,#dinner-movie-btn", yelp);
+  $( "#dinner-btn" ).click(function()  {
+    $(".section-options").hide();
+    $("#carousel-container").show();
+  });
+
 
 
   // eventful ajax api call
@@ -91,11 +110,10 @@ $(document).ready(function(){
           eventImage = res.events.event[i].image.medium.url;
           console.log(eventImage);     
         }
-      
-        $(".img-class").append();
-        $(".info-title-class").append(eventTitle);
-        $(".info-class").append(eventVenueName,eventVenueAddress,eventUrl);
-
+        
+        // $(".img-class").append();
+        // $(".info-title-class").append(eventTitle);
+        // $(".info-class").append(eventVenueName,eventVenueAddress,eventUrl);
 
       }
     });
