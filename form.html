@@ -78,7 +78,8 @@
                         <option>music</option>
                         <option>comedy</option>
                         <option>sports</option>
-                        <option>random</option>
+                        <option>outdoors</option>
+                        <option>performing arts</option>
                     </select>
 
                     <label>When:</label>
@@ -101,9 +102,10 @@
 
 <!-- carousels to display results to page -->
     <div class="container" id="carousel-container">
-        <div class="row" style="text-align:center; color:black">
+        <div class="row" style="text-align:center; color:white">
             <div class="col-md-12">
                 <h1>Results</h1>
+                <p>click on images for restaurant or event page</p>
             </div>
         </div>
 
@@ -113,20 +115,17 @@
             <div class="col-md-5 col-md-offset-1"> 
                 <div id="yelpCarousel" class="carousel slide" data-ride="carousel">
                     <!-- Indicators -->
-                    <ol class="carousel-indicators">
+                    <!-- <ol class="carousel-indicators">
                     <li data-target="#yelpCarousel" data-slide-to="0" class="active"></li>
                     <li data-target="#yelpCarousel" data-slide-to="1"></li>
                     <li data-target="#yelpCarousel" data-slide-to="2"></li>
-                    </ol>
+                    <li data-target="#yelpCarousel" data-slide-to="3"></li>
+                    <li data-target="#yelpCarousel" data-slide-to="4"></li>
+                    </ol> -->
                 
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner">
                         <div class="item active" id="yelp-item-1">
-                            <!-- <img src="https://www.purplexmarketing.com/wp-content/uploads/2017/07/Building-stock-image-200x300.jpg" alt="Los Angeles" style="width:100%;">
-                            <div class="carousel-caption">
-                                <h3>Los Angeles</h3>
-                                <p>LA is always so much fun!</p>
-                            </div> -->
                         </div>
                     
                         <div class="item" id="yelp-item-2">
@@ -134,6 +133,12 @@
                         
                         <div class="item" id="yelp-item-3">
                         </div>
+
+                        <div class="item" id="yelp-item-4">
+                        </div>
+
+                        <div class="item" id="yelp-item-5">
+                         </div>
                     </div>
                 
                     <!-- Left and right controls -->
@@ -153,29 +158,30 @@
             <div class="col-md-5"> 
                 <div id="eventfulCarousel" class="carousel slide" data-ride="carousel">
                     <!-- Indicators -->
-                    <ol class="carousel-indicators">
+                    <!-- <ol class="carousel-indicators">
                     <li data-target="#eventfulCarousel" data-slide-to="0" class="active"></li>
                     <li data-target="#eventfulCarousel" data-slide-to="1"></li>
                     <li data-target="#eventfulCarousel" data-slide-to="2"></li>
-                    </ol>
+                    <li data-target="#eventfulCarousel" data-slide-to="3"></li>
+                    <li data-target="#eventfulCarousel" data-slide-to="4"></li>
+                    </ol> -->
                 
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner">
-                    <div class="item active">
-                    <!-- <img src="https://www.purplexmarketing.com/wp-content/uploads/2017/07/Building-stock-image-200x300.jpg" alt="Los Angeles" style="width:100%;">
-                            <div class="carousel-caption">
-                                <h3>Los Angeles</h3>
-                                <p>LA is always so much fun!</p>
-                            </div> -->                    
-                    </div>
-                
-                    <div class="item">
-                        <!-- <img src="https://i.ebayimg.com/images/g/sBcAAOSwtBdaXDOR/s-l300.jpg" alt="Chicago" style="width:100%;"> -->
-                    </div>
+                        <div class="item active" id="eventful-item-1">
+                        </div>
                     
-                    <div class="item">
-                        <!-- <img src="https://i.ebayimg.com/images/g/rLgAAOSww5NZBHYN/s-l300.jpg" alt="New york" style="width:100%;"> -->
-                    </div>
+                        <div class="item" id="eventful-item-2">
+                        </div>
+                        
+                        <div class="item" id="eventful-item-3">
+                        </div>
+
+                        <div class="item" id="eventful-item-4">
+                        </div>
+
+                        <div class="item" id="eventful-item-5">
+                        </div>
                     </div>
                 
                     <!-- Left and right controls -->
@@ -191,7 +197,14 @@
             </div>
 
         </div>
+        <!-- try again button -->
+        <div class="row">
+                <div class="col-md-12" style="text-align:center">
+                        <button class="btn btn--md btn--blue" id="try-again-button">Try Again</button>
+                    </div>
+            </div>
     </div>
+
     
 
     <!-- JS and jQuery scripts -->
