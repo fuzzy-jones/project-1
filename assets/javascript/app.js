@@ -288,7 +288,7 @@ $(document).ready(function(){
 
     // store the values of the form inputs into the global variables above
     city = $("#city-input").val().trim();
-    state = $("#state-input").val().trim();
+    state = $("#state-input").val();
     // zip = $("#zip-input").val().trim();
     foodType = $("#food-type-input").val();
     price = $("#price-input").val();
