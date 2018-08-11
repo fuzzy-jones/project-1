@@ -1,11 +1,3 @@
-
-// yelp api_____
-// bcs2fOhux1UxgJZYOjtqrLNWDZ6vNIgGrG_ESgiA64aFLubG3z7uL5vFvTMqn5onZA8hqGZse6UiSqlB0oLm5UIjzjXUfqCsqLI63vCJhjJSQW84sTBBy-v9A8lzWnYx
-
-
-// eventful api_____
-// Key: xzCLvXpkc5JmtDcX
-
 $(document).ready(function(){
   $("#carousel-container").hide();
 
@@ -30,80 +22,84 @@ $(document).ready(function(){
       // var yelpCarousel = $("<div class='item active'>");
 
       // added a loop to select specific targets within the object
-      for(var i = 0; i < response.businesses.length; i++){
-      
-      // storing value of 5 restaurant images in variables
-      // var restaurantImage = response.businesses[i].image_url;
-      var restaurantImage1 = response.businesses[0].image_url;
-      var restaurantImage2 = response.businesses[1].image_url;
-      var restaurantImage3 = response.businesses[2].image_url;
-      var restaurantImage4 = response.businesses[3].image_url;
-      var restaurantImage5 = response.businesses[4].image_url;
-      
-      // storing value of 5 restaurant names in variables
-      // var restaurantName = response.businesses[i].name;
-      var restaurantName1 = response.businesses[0].name;
-      var restaurantName2 = response.businesses[1].name;
-      var restaurantName3 = response.businesses[2].name;
-      var restaurantName4 = response.businesses[3].name;
-      var restaurantName5 = response.businesses[4].name;
+      for(var i = 1; i < response.businesses.length; i++){
 
-      // storing value of 5 restaurant rating in variables
-      // var restaurantRating = ("Rating: " + response.businesses[i].rating);
-      var restaurantRating1 = ("Rating: " + response.businesses[0].rating + "/5");
-      var restaurantRating2 = ("Rating: " + response.businesses[1].rating + "/5");
-      var restaurantRating3 = ("Rating: " + response.businesses[2].rating + "/5");
-      var restaurantRating4 = ("Rating: " + response.businesses[3].rating) + "/5";
-      var restaurantRating5 = ("Rating: " + response.businesses[4].rating + "/5");
+        // appending data through the loop is breaking the carousel
+        // i think it has to do with the item-active vs item
+        // Its really long winded this way and not coded well but what is working
+        
+        // storing value of 5 restaurant images in variables
+        // var restaurantImage = response.businesses[i].image_url;
+        var restaurantImage1 = response.businesses[0].image_url;
+        var restaurantImage2 = response.businesses[1].image_url;
+        var restaurantImage3 = response.businesses[2].image_url;
+        var restaurantImage4 = response.businesses[3].image_url;
+        var restaurantImage5 = response.businesses[4].image_url;
+        
+        // storing value of 5 restaurant names in variables
+        // var restaurantName = response.businesses[i].name;
+        var restaurantName1 = response.businesses[0].name;
+        var restaurantName2 = response.businesses[1].name;
+        var restaurantName3 = response.businesses[2].name;
+        var restaurantName4 = response.businesses[3].name;
+        var restaurantName5 = response.businesses[4].name;
 
-      // storing value of 5 restaurant addresses in variables
-      // var restaurantAddress = response.businesses[i].location.address1;
-      var restaurantAddress1 = response.businesses[0].location.address1;
-      var restaurantAddress2 = response.businesses[1].location.address1;
-      var restaurantAddress3 = response.businesses[2].location.address1;
-      var restaurantAddress4 = response.businesses[3].location.address1;
-      var restaurantAddress5 = response.businesses[4].location.address1;
-      
-      // storing value of 5 restaurant yelp page urls in variables
-      // var restaurantUrl = response.businesses[i].url;
-      var restaurantUrl1 = response.businesses[0].url;
-      var restaurantUrl2 = response.businesses[1].url;
-      var restaurantUrl3 = response.businesses[2].url;
-      var restaurantUrl4 = response.businesses[3].url;
-      var restaurantUrl5 = response.businesses[4].url;
-      
-      // selecting item in carousel html, and displaying the restaurant image and giving a class to select for text to display in html
-      $("#yelp-item-1").html("<img src=" + restaurantImage1 + "><br><div class='carousel-caption-1'>"); 
-        // selecting the dynamic div created above and displaying html for name, rating, and address in carousel
-        $(".carousel-caption-1").html("<h3>" + restaurantName1 + "</h3><h3>" + restaurantRating1 + "</h3><h3>" + restaurantAddress1 + "</h3>");
-        // when you click on the carousel for each restaurant option it will redirect you to the yelp page with map, directions and more pictures
-        $('#yelp-item-1').on('click', function(){
-          window.location = restaurantUrl1;
-        });
+        // storing value of 5 restaurant rating in variables
+        // var restaurantRating = ("Rating: " + response.businesses[i].rating);
+        var restaurantRating1 = ("Rating: " + response.businesses[0].rating + "/5");
+        var restaurantRating2 = ("Rating: " + response.businesses[1].rating + "/5");
+        var restaurantRating3 = ("Rating: " + response.businesses[2].rating + "/5");
+        var restaurantRating4 = ("Rating: " + response.businesses[3].rating) + "/5";
+        var restaurantRating5 = ("Rating: " + response.businesses[4].rating + "/5");
 
-      $("#yelp-item-2").html("<img src=" + restaurantImage2 + "><br><div class='carousel-caption-2'>");
-        $(".carousel-caption-2").html("<h3>" + restaurantName2 + "</h3><h3>" + restaurantRating2 + "</h3><h3>" + restaurantAddress2 + "</h3>");
-        $('#yelp-item-2').on('click', function(){
-          window.location = restaurantUrl2;
-        });
+        // storing value of 5 restaurant addresses in variables
+        // var restaurantAddress = response.businesses[i].location.address1;
+        var restaurantAddress1 = response.businesses[0].location.address1;
+        var restaurantAddress2 = response.businesses[1].location.address1;
+        var restaurantAddress3 = response.businesses[2].location.address1;
+        var restaurantAddress4 = response.businesses[3].location.address1;
+        var restaurantAddress5 = response.businesses[4].location.address1;
+        
+        // storing value of 5 restaurant yelp page urls in variables
+        // var restaurantUrl = response.businesses[i].url;
+        var restaurantUrl1 = response.businesses[0].url;
+        var restaurantUrl2 = response.businesses[1].url;
+        var restaurantUrl3 = response.businesses[2].url;
+        var restaurantUrl4 = response.businesses[3].url;
+        var restaurantUrl5 = response.businesses[4].url;
+        
+        // selecting item in carousel html, and displaying the restaurant image and giving a class to select for text to display in html
+        $("#yelp-item-1").html("<img src=" + restaurantImage1 + "><br><div class='carousel-caption-1'>"); 
+          // selecting the dynamic div created above and displaying html for name, rating, and address in carousel
+          $(".carousel-caption-1").html("<h3>" + restaurantName1 + "</h3><h3>" + restaurantRating1 + "</h3><h3>" + restaurantAddress1 + "</h3>");
+          // when you click on the carousel for each restaurant option it will redirect you to the yelp page with map, directions and more pictures
+          $('#yelp-item-1').on('click', function(){
+            window.location = restaurantUrl1;
+          });
 
-      $("#yelp-item-3").html("<img src=" + restaurantImage3 + "><br><div class='carousel-caption-3'>"); 
-        $(".carousel-caption-3").html("<h3>" + restaurantName3 + "</h3><h3>" + restaurantRating3 + "</h3><h3>" + restaurantAddress3 + "</h3>");
-        $('#yelp-item-3').on('click', function(){
-          window.location = restaurantUrl3;
-        });
+        $("#yelp-item-2").html("<img src=" + restaurantImage2 + "><br><div class='carousel-caption-2'>");
+          $(".carousel-caption-2").html("<h3>" + restaurantName2 + "</h3><h3>" + restaurantRating2 + "</h3><h3>" + restaurantAddress2 + "</h3>");
+          $('#yelp-item-2').on('click', function(){
+            window.location = restaurantUrl2;
+          });
 
-      $("#yelp-item-4").html("<img src=" + restaurantImage4 + "><br><div class='carousel-caption-4'>"); 
-        $(".carousel-caption-4").html("<h3>" + restaurantName4 + "</h3><h3>" + restaurantRating4 + "</h3><h3>" + restaurantAddress4 + "</h3>");
-        $('#yelp-item-4').on('click', function(){
-          window.location = restaurantUrl4;
-        });
+        $("#yelp-item-3").html("<img src=" + restaurantImage3 + "><br><div class='carousel-caption-3'>"); 
+          $(".carousel-caption-3").html("<h3>" + restaurantName3 + "</h3><h3>" + restaurantRating3 + "</h3><h3>" + restaurantAddress3 + "</h3>");
+          $('#yelp-item-3').on('click', function(){
+            window.location = restaurantUrl3;
+          });
 
-      $("#yelp-item-5").html("<img src=" + restaurantImage5 + "><br><div class='carousel-caption-5'>"); 
-        $(".carousel-caption-5").html("<h3>" + restaurantName5 + "</h3><h3>" + restaurantRating5 + "</h3><h3>" + restaurantAddress5 + "</h3>");
-        $('#yelp-item-5').on('click', function(){
-          window.location = restaurantUrl5;
-        });
+        $("#yelp-item-4").html("<img src=" + restaurantImage4 + "><br><div class='carousel-caption-4'>"); 
+          $(".carousel-caption-4").html("<h3>" + restaurantName4 + "</h3><h3>" + restaurantRating4 + "</h3><h3>" + restaurantAddress4 + "</h3>");
+          $('#yelp-item-4').on('click', function(){
+            window.location = restaurantUrl4;
+          });
+
+        $("#yelp-item-5").html("<img src=" + restaurantImage5 + "><br><div class='carousel-caption-5'>"); 
+          $(".carousel-caption-5").html("<h3>" + restaurantName5 + "</h3><h3>" + restaurantRating5 + "</h3><h3>" + restaurantAddress5 + "</h3>");
+          $('#yelp-item-5').on('click', function(){
+            window.location = restaurantUrl5;
+          });
 
       }
     }); 
@@ -135,9 +131,15 @@ $(document).ready(function(){
     $.ajax(settings).done(function (response) {
       // turning string into object and storing in variable res
       var res = JSON.parse(response);
+      console.log(res);
+
 
       // looping through the array and return the events within the object
       for(var i = 0; i < res.events.event.length; i++){
+
+        // appending data through the loop is breaking the carousel
+        // i think it has to do with the item-active vs item
+        // Its really long winded this way and not coded well but what is working
 
         // var eventTitle = res.events.event[i].title;
         var eventTitle1 = res.events.event[0].title;
@@ -169,6 +171,7 @@ $(document).ready(function(){
         var eventTime4 = res.events.event[3].start_time;
         var eventTime5 = res.events.event[4].start_time;
 
+        // images for carousel if event doesn't return an image
         var eventImage1 = "";
         if (res.events.event[0].image==null) {
           eventImage1 = "https://t4.ftcdn.net/jpg/01/11/95/65/240_F_111956526_iqKGrrQH05N6j8QVqh7uSzbil4hbjbjI.jpg";
